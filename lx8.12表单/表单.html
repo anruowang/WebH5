@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="text" form="form1" pattern="[a-z]{3}">
+	<form id="form1" action="" method="">
+		<p>input标签类型：text password button submit reset file radio checkbox</p>
+		<!-- 输入网址，自动验证 带上http协议 -->
+		<p>请输入一个网址：<input type="url" name="weburl" /></p>
+		<!-- 输入邮箱会自动验证  一个网页里面只能有一个自动获焦autofocus -->
+		<p>请输入一个email邮箱<input type="email" name="email" autofocus /></p>
+		<!-- 如果浏览器不支持的话会变成普通文本框 -->
+		<p>date：<input type="date" name="date" /></p>
+		<p>color:<input type="color" name="color" /></p>
+		<p>number:<input type="number" name="number" /></p>
+		<!-- 自动完成：是否自动保存你提交的数据 -->
+		<p>tel:<input type="tel" name="tel"  autocomplete="off" /></p>
+		<p><input type="range" min="0" max="100" step="1"></p>
+		<p>search:<input type="search" name="search"  autofocus autocomplete="off" /></p>
+		<!-- required:必要的 -->
+		<p>tel:<input type="tel" name="tel" required /></p>
+		<!-- formaction:提交给不同的网页 -->
+		<p><input type="submit" value="提交" formaction="?page=1" /></p>
+		<p><input type="submit" value="提交" formaction="?page=2" /></p>
+		<p><input type="submit" value="提交" formaction="?page=3" /></p>
+	</form>
+</body>
+</html>
