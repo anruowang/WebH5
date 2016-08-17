@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="600" height="600">你的浏览器不支持html5</canvas>
+	<script type="text/javascript">
+		//1.得到canvas对象
+		var canvas=document.getElementById("canvas");
+
+		//2.获得绘制对象 俗称上下文 绘制的是2d的图形
+		var context=canvas.getContext("2d");
+		// 画弧形 context.arc(x,y,radius,startAngle,endAngle,antiClockwise);
+		// x,y 圆心坐标
+		// radius 半径
+		// startAngle endAngle  开始位置和结束位置
+		// antiClockwise true/false
+	</script>
+</body>
+</html>

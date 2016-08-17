@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		@font-face{
+			font-family: npc;
+			/*引入本地的字体，这个字体到时候也要一并传到服务器*/
+			src:url(STXINGKA.TTF);
+		}
+		.p1{
+			font-size: 148px;
+			/*文字描边 厚度/宽度  颜色*/
+			-webkit-text-stroke:4px red;
+			-moz-text-stroke:4px red;
+			/*文字对齐 unicode-bidi */
+			direction: rtl;
+			unicode-bidi: bidi-override;/*文字顺序和direction一样*/
+			font-family: npc;
+			/*文本阴影 x y 模糊半径  颜色*/
+			text-shadow: 3px 3px 3px lime;
+		}
+		.p2{
+			font-size: 48px;
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			color: red;
+			font-weight: bold;
+			text-align: right;
+			font-family: "华文行楷";
+			/*省略号*/
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	</style>
+</head>
+<body>
+	<p class="p1">心如止水</p>
+	<p class="p2">岁月不伤岁月不伤</p>
+</body>
+</html>

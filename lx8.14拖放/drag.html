@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height: 200px;
+			background: lime;
+		}
+		p{
+			width: 300px;
+			height: 300px;
+			margin-left: 300px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	draagable:可拖曳的   true   false  auto
+	auto:img a 标签是可以拖曳的
+	<div draggable="true">aaa</div>
+	<p></p>
+	拖放的事件
+	<script type="text/javascript">
+		var div=document.getElementsByTagName("div")[0];
+		//1.开始拖放  只能触发一次
+		div.addEventListener("dragstart", function(){
+			console.log("开始拖放");
+		},false);
+		//2.正在拖放
+		div.addEventListener("drag", function(){
+			console.log("开始拖放");
+		},false);
+		//被拖放的元素或者是从文件系统选中的文件，脱落放下的时候触发
+		// div.addEventListener("drop", function(){
+		// 	console.log("开始拖放");
+		// },false);
+		// 拖放结束
+		div.addEventListener("dragend", function(){
+			console.log("拖放结束");
+		},false);
+
+
+		var p=document.getElementsByTagName("p")[0];
+		p.addEventListener("dragenter",function(){
+			console.log("拖放进入了目标元素");
+		},false);
+		p.addEventListener("dragleave",function(){
+			console.log("拖放离开了目标元素");
+		},false);
+		p.addEventListener("dragover",function(){
+			console.log("拖放停留在目标元素之中");
+		},false);
+
+		// 完成一次成功页面内元素拖拽的行为事件过程应该是： dragstart –> dragenter –> dragover –> drop –> dragend
+	</script>
+</body>
+</html>

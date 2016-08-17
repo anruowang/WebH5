@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="400px" height="400px">你的浏览器不支持html6</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var context=canvas.getContext("2d");
+		
+		//创建绘图路径
+		context.arc(150,100,50,0,Math.PI*2,true); //圆形路径
+		context.rect(50,50,100,100);//矩形路径
+
+		//设置样式
+		context.strokeStyle="#000";//设置边框颜色
+		context.lineWidth=3;//设置边框高度
+		context.fillStyle="#f90";//设置填充颜色
+
+		context.stroke();//绘制边框
+		context.fill();//填充区域
+
+		//图形结合
+	</script>
+</body>
+</html>

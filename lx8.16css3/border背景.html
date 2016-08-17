@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.box{
+			width: 100px;
+			height: 100px;
+			border-width:20px;
+			/*边框的背景图片*/
+			border-image:url(border.png) 27 27 round stretch;
+			-webkit-border-image:url(border.png) 27 27 round stretch;
+			-moz-border-image:url(border.png) 27 27 round stretch;
+			/*border-image-source: 用在边框的图片路径
+			border-image-slice:图片边框向内偏移
+			border-image-width图片边框的高度
+			border-image-outset边框图片区域超出边框的量
+			border-image-repeat平铺repeat 铺满round或拉伸stretch*/
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	multiple:多选
+	<input type="file" id="files" multiple accept="image/jpeg" />
+	<input type="button" value="查看文件属性" onClick="showInfo()" />
+	<p id="msg"></p>
+	<script type="text/javascript">
+		function showInfo(){
+			//获得所有的选中文件
+			var fileList=document.getElementById("files").files;
+			var msg=document.getElementById("msg");
+			for(var i=0;i<fileList.length;i++){
+				var file=fileList[i];
+				//对于file而言 name size type
+				msg.innerHTML+="第"+(i+1)+"个文件，文件名为："+file.name+"<br/>";
+				msg.innerHTML+="文件大小："+file.size+"<br/>";//单位是字节 b 1kb=1024b
+				msg.innerHTML+="文件类型："+file.type+"<br/><br/><br/>";
+			}
+		}
+	</script>
+</body>
+</html>

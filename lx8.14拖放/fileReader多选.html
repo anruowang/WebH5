@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	fileReader 实例化对象 new   readAsText readAsDataurl readAsArrayBuffer
+	<input type="file" id="files" multiple accept="image/*" />
+	<input type="button" value="读取为文本" onclick="ReadAs('text')" />
+	<input type="button" value="读取为二进制" onclick="ReadAs('BinaryString')" />
+	<input type="button" value="读取为数组缓存区" onclick="ReadAs('ArrayBuffer')" />
+	<input type="button" value="读取为url" onclick="ReadAs('DataURL')" />
+	<p id="msg"></p>
+	<script type="text/javascript">
+		function ReadAs(type){
+					var file=document.getElementById("files").files;
+
+			for(var i=0;i<file.length;i++){
+			//先得到文件
+			if(file[i]){
+				//首先，创建出来这个FileReader
+				var reader=new FileReader();
+				//根据传过来的参数，来选择读取文件的方法
+				switch (type) {
+					case "text":
+						//因为  读取 触发的是事件 而不是结果
+						reader.readAsText(file[i]);
+						break;
+					case "BinaryString":
+						reader.readAsBinaryString(file[i]);
+						break;
+					case "ArrayBuffer":
+						reader.readAsArrayBuffer(file[i]);
+						break;
+					case "DataURL":
+						reader.readAsDataURL(file[i]);
+						break;
+				}
+				reader.onload=function(e){
+					var file=document.getElementById("files").files;
+					for(var i=0;i<file.length;i++){
+					//结果在这里
+					var result=this.result;
+					if(/image\/\w+/.test(file[i].type)){
+						document.getElementById("msg").innerHTML="<img src='"+result+"'/>";
+					}else{
+						document.getElementById("msg").innerHTML=result;
+					}
+				}
+				}
+			}
+		}
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box{
+			position: absolute;
+			left: 300px;
+			top: 200px;
+			font-size: 12px;
+			background: pink;
+			padding: 5px;
+			box-shadow: 2px 2px 4px red;
+			-moz-box-shadow: 2px 2px 4px red;
+			-webkit-box-shadow: 2px 2px 4px red;
+			-ms-box-shadow: 2px 2px 4px red;
+		}
+		#content{
+			border: 1px solid #A5B5D6;
+		}
+		#top{
+			width: 425px;
+			line-height: 25px;
+			cursor:move;
+			background:#BDCEEF;
+			border-bottom:1px solid #A5B5D6;
+			padding-left: 5px;
+		}
+		#close{
+			color:red;
+			font-size: 30px;
+			font-weight: bold;
+			float: right;
+			position: absolute;
+			top: 2px;
+			right: 8px;
+			cursor:pointer;
+		}
+		#bottom{
+			width: 420px;
+			height: 250px;
+			padding-left: 10px 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="content">
+			<div id="top">
+				可拖曳
+				<span id="close">x</span>
+			</div>
+			<div id="bottom">
+				内容......
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.onload=function(){ //window.onload指当DOM树加载完成后再执行js
+			var oBox=document.getElementById("box");  //获取box的ID
+			var oTop=document.getElementById("top");
+			document.getElementById("close").onclick=function(){ //添加点击事件
+				oBox.style.display="none";
+				//document.getElementById("box").style.display="none";
+			}				//点击隐藏事件也可以这样写
+			startDrag(oBox,oTop);   //直接在这里调用startDrag函数
+		}
+
+		// function aaa(){    //一定得注意这种写法，不能放在window里面，会成为内置函数，那就获取不到了
+		// 	var oBox=document.getElementById("box");
+		// 		oBox.style.display="none";
+		// }
+
+
+		var params={  //创建一个新按钮
+			left:0,
+			top:0,
+			clientX:0,  //定义当前的X坐标
+			clientY:0,
+			flag:false  //flag:指移动
+		}
+
+		function getStyle(obj,attr){
+			if(obj.currentStyle){   //currentStyle兼容IE和opera
+				return obj.currentStyle[attr];
+			}else{
+				return getComputedStyle(obj,false)[attr];//getcomputedStyle兼容ff和谷歌
+			}
+		}   //封装浏览器的兼容性
+		
+		function startDrag(oBox,oTop){
+			//获取当前默认状态下box的 left top的值
+			params.left=getStyle(oBox,"left");
+			params.top=getStyle(oBox,"top");
+
+			//鼠标按下
+			oTop.onmousedown=function(event){
+				//var event=event?event:window.event;  //直接设置浏览器IE的兼容性
+				//1.修改flag的值
+				params.flag=true;
+				//解决一个BUG，不能让鼠标去选中文字
+				if(!event){
+					event=window.event;
+					oTop.onselectstart=function(){
+						return false;
+					}
+				}
+				oTop.onselectstart=function(){
+					return false;
+				}
+							
+				//2.得到当前鼠标的坐标
+				var e=event?event:window.event;
+				params.currentX=e.clientX;
+				params.currentY=e.clientY;
+			}
+			//鼠标移动
+			document.onmousemove=function(event){
+				var e=event?event:window.event;
+				//1.判断flag
+				if(params.flag){
+					var nowX=e.clientX;//当前的X的坐标
+					var nowY=e.clientY;//当前的Y的坐标
+					var disX=nowX-params.currentX; //移动前后的X轴的差值
+					var disY=nowY-params.currentY;
+					oBox.style.left=parseInt(params.left)+disX+"px";//left是有效的，把它变成整形
+					oBox.style.top=parseInt(params.top)+disY+"px";
+				}
+				//2.得到移动的距离
+				//3.赋值
+			}
+			//鼠标松开
+			document.onmouseup=function(event){
+				var e=event?event:window.event;
+				//1.修改flag的值
+				params.flag=false;
+
+				params.left=getStyle(oBox,"left");
+				params.top=getStyle(oBox,"top");
+			}
+		}
+	</script>
+</body>
+</html>

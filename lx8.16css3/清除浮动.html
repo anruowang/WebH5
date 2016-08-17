@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.div1{
+			float: left;
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+		}
+		.div2{
+			float: left;
+			/*浮动，让标签脱离文档流，父级元素没有设置高度，那么高度会变成0*/
+			width: 200px;
+			height: 200px;
+			border:1px solid blue;
+		}
+		.box{
+			border: 1px solid black;
+			zoom:1;/*ie特有*/
+		}
+		/*目前市面主流清除浮动*/
+		.box:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"> 
+		<div class="div1">a</div>
+		<div class="div2">b</div>
+	</div>
+	<!-- <div style="clear: both"></div> -->
+	<div class="box2">c</div>
+</body>
+</html>

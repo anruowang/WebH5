@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="300">你的浏览器不支持html5</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var context=canvas.getContext("2d");
+
+		context.fillStyle="red";
+		context.save();//保存
+		context.fillStyle="lime";
+		context.fillRect(0,0,100,100);
+		context.restore();//如果有属性存在save和restore之间，那么这个属性只存在这一个区间
+		context.fillRect(0,120,100,100);
+		//context.fillStyle="red";删掉的话，第二个为黑色
+	</script>
+</body>
+</html>

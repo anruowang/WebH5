@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		ul{
+			height: 300px;
+			margin: 20px;
+			background-color: #eee;
+		}
+		ul li{
+			background: #ccc;
+			padding: 10px;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<ul id="drag-elements">
+		<li draggable="true">a</li>
+		<li draggable="true">b</li>
+		<li draggable="true">c</li>
+	</ul>
+	<ul id="drop-target"></ul>
+	<script type="text/javascript">
+		//获得目标元素和所有的拖放元素
+		var target=document.getElementById("drop-target");
+		var dragElements=document.getElementsByTagName("li");
+
+		var elementDragged;
+
+		for(var i=0;i<dragElements.length;i++){
+			dragElements[i].addEventListener("dragstart",function(e){
+				//键 值
+				e.dataTransfer.setData("text",this.innerHTML);
+				//被拖曳的元素
+				elementDragged=this;
+			},false);
+			dragElements[i].addEventListener("dragend",function(e){
+				//拖放结束，拖放这个元素设为null
+				elementDragged=null;
+			},false);
+		}
+			
+			target.addEventListener("dragover",function(e){
+				e.preventDefault();
+				e.dataTransfer.dropEffect="move";
+			},false);
+
+			target.addEventListener("drop",function(e){
+				e.preventDefault();
+				//获取数据
+				this.innerHTML=e.dataTransfer.getData("text");
+				//移除元素的节点
+				document.getElementById("drag-elements").removeChild(elementDragged);
+			},false);
+		
+	</script>
+</body>
+</html>

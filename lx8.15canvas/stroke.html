@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#canvas1{
+			
+			border: 1px solid pink;
+		}
+		#canvas2{
+			border: 1px solid lime;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas1" width="300" height="300">你的浏览器不支持html5</canvas>
+	<canvas id="canvas2" width="300" height="300">你的浏览器不支持html5</canvas>
+	<!-- canvas有自己的内部像素的，默认宽是150px 高200px
+	canvas设置大小不能用css样式设置的，.css设置的大小是体现一个标签在网页里面占据的空间而已
+	canvas的大小是由canvas属性俩决定的，而且不用带单位
+	canvas的绘制，自身是没有绘制能力的，所有的绘制必须在js内部完成 -->
+	<script type="text/javascript">
+		//1.得到canvas对象
+		var canvas1=document.getElementById("canvas1");
+		var canvas2=document.getElementById("canvas2");
+
+		//设置大小，不要加单位
+		// canvas1.width=200;
+		// canvas1.height=200;
+
+		//2.获得绘制对象，俗称上下文 绘制的是2d的图形
+		var context1=canvas1.getContext("2d");
+		var context2=canvas2.getContext("2d");
+
+		//3开始绘制
+		//fill():填充
+		//fillStyle="" 填充的颜色
+		//filRect(x,y,width,height);
+		context1.fillStyle="rgba(244,8,9,0.7)";
+		context1.fillRect(50,50,200,200);
+		context1.fill();
+
+		// context2.strokeStyle="rgba(78,33,119,0.7)";
+		// context2.strokeRect(50,50,200,200);
+		// context2.stroke();
+
+		context1.strokeStyle="rgba(78,33,119,0.7)";
+		context1.strokeRect(50,50,200,200);
+		context1.stroke();
+
+		//设置文字大小颜色居中
+		context2.font="58px 华文行楷";
+		context2.fillStyle="rgba(78,33,119,0.7)";
+		// context2.textAlign="center";
+		//fillText(txt,x,y);
+		context2.fillText("落叶",100,100);
+
+		context2.font="58px 华文行楷";
+		context2.strokeStyle="rgba(78,33,119,0.7)";
+		// context2.textAlign="center";
+		//fillText(txt,x,y);
+		context2.strokeText("落叶",100,200);
+	</script>			
+</body>
+</html>

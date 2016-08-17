@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" width="800" height="800">你的浏览器不支持html5</canvas>
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas");
+		var context=canvas.getContext("2d");
+
+		//创建出一个img对象
+		var newImg=new Image();
+		newImg.src="1.jpg";
+		newImg.onload=function(){
+			//画这个图片，从0,0这个点开始绘制
+			context.drawImage(newImg,0,0);
+			//从400 400 开始画图片 图片的宽高是100*100
+			context.drawImage(newImg,400,400,100,100);
+			//截取一部分来显示 90.80 截取 100，100 放大600,600来显示 大小为200*200
+			context.drawImage(newImg,90,80,100,100,600,600,200,200);
+		}
+	</script>
+</body>
+</html>
