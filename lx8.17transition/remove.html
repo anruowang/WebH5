@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			transition: width 1s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">1111</div>
+	<script type="text/javascript">
+		var box=document.getElementsByClassName("box")[0];
+		box.onclick=function(){
+			this.style.width=this.offsetWidth+100+"px";
+			this.style.height=this.offsetHeight+100+"px";
+			addEnd(box,end);
+		}
+		function addEnd(obj,fn){
+			obj.addEventListener("webkitTransitionEnd", fn,fasle); //兼容谷歌
+			obj.addEventListener("transitionEnd", fn,fasle);//火狐
+		}
+		// addEnd(box,function(){
+		// 	this.style.width=this.offsetWidth+100+"px";
+		// 	this.style.Height=this.offsetHeight+100+"px";
+		// 	alert("a");//过渡了多少属性，触发了多少次
+		// })
+		function end(){
+			this.style.width=this.offsetWidth+100+"px";
+			removeEnd(this,end);
+		}
+		function removeEnd(obj,fn){
+			obj.removeEventListener("webkitTransitionEnd", fn,false);
+			obj.removeEventListener("transitionEnd",fn,false);
+		}
+	</script>
+</body>
+</html>

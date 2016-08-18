@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		p{
+			width: 150px;
+			height: 40px;
+			margin: 20px;
+			background-color: pink;
+		}
+		#p1:hover{
+			width: 100%;
+			-webkit-transition:width 3s linear;
+			-moz-transition:width 3s linear;
+			-ms-transition:width 3s linear;
+		}
+		#p2:hover{
+			width: 100%;
+			-webkit-transition:width 3s ease;
+			-moz-transition:width 3s ease;
+			-ms-transition:width 3s ease;
+		}
+		#p3:hover{
+			width: 100%;
+			-webkit-transition:width 3s ease-in;
+			-moz-transition:width 3s ease-in;
+		}
+		#p4:hover{
+			width: 100%;
+			-webkit-transition:width 3s ease-out;
+			-moz-transition:width 3s ease-out;
+		}		
+		#p5:hover{
+			width: 100%;
+			-webkit-transition:width 3s ease-in-out;
+			-moz-transition:width 3s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+	<p id="p1">linear线性匀速</p>
+	<p id="p2">ease 由慢到快再到慢</p>
+	<p id="p3">ease-in 由慢到快</p>
+	<p id="p4">ease-out 由快到慢</p>
+	<p id="p5">ease-in-out由慢到快再到慢</p>
+</body>
+</html>

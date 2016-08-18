@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-9">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 400px;
+			height: 400px;
+			background:red;
+			margin: 0 auto;
+			/*-webkit-transition:background-color 1s,width 1s;*/
+			/*-webkit-transition:background-color 1s 2s;*/
+			/*先改变颜色 再高度 宽度*/
+			-webkit-transition:background-color 2s,height 2s 2s,width 2s 4s;/*延迟要累加*/
+		}
+		div:hover{
+			width: 600px;
+			height: 600px;
+			background-color: #60F;
+			/*transition: 1s;*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

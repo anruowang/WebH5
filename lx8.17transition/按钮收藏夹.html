@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{
+			background:#f9f9f9;
+		}
+		#menu{
+			width: 50px;
+			height: 50px;
+			position: fixed;
+			left: 50%;
+			top:50%;
+		}
+		#menu_list{
+			position: relative;
+			width: 42px;
+			height: 42px;
+		}
+		#menu_list img{
+			position:absolute;
+			left: 0;
+			top: 0;
+		}
+		#home{
+			width: 50px;
+			height: 50px;
+			background:url(images/home.png) no-repeat;
+			position: absolute;
+			left: 0;
+			top: 0;
+			-webkit-transition:1s;
+		}
+	</style>
+</head>
+<body>
+	<div id="menu">
+		<div id="menu_list">
+			<img src="images/clos.png" alt="">
+			<img src="images/full.png" alt="">
+			<img src="images/open.png" alt="">
+			<img src="images/prev.png" alt="">
+			<img src="images/refresh.png" alt="">
+		</div>
+		<div id="home"></div>
+	</div>
+	<script type="text/javascript">
+		var oHome=document.getElementById("home");
+		var aImg=document.getElementById("menu_list").getElementsByTagName("img");
+
+		oHome.onclick=function(){
+			if(rture){
+				this.style.WebkitTransform="rotate(-360deg)";
+			}else{
+				this.style.WebkitTransform="rotate(360deg)";
+			}
+		}
+	</script>
+</body>
+</html>
