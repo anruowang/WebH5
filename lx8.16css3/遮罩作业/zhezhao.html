@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0 auto;
+		}
+		#d1{
+			width: 1366px;
+			height: 400px;
+			background-image: url(img/1.jpg);
+			-webkit-mask:url(img/mask.png) repeat-x;
+			-webkit-mask-position:54% 100%;
+			background-size: 100% 100%;
+		}
+		#d2{
+			width: 1366px;
+			height: 400px;
+			background-image: url(img/2.jpg);
+			-webkit-mask:url(img/mask.png) repeat-x;
+			-webkit-mask-position:54% 100%;
+			display: none;
+		}
+		#d3{
+			width: 1366px;
+			height: 400px;
+			background-image: url(img/3.jpg);
+			-webkit-mask:url(img/mask.png) repeat-x;
+			-webkit-mask-position:54% 100%;
+			background-size: 100% 100%;
+			display: none;			
+		}
+		#d4{
+			width: 1366px;
+			height: 400px;
+			background-image: url(img/4.jpg);
+			-webkit-mask:url(img/mask.png) repeat-x;
+			-webkit-mask-position:54% 100%;
+			background-size: 100% 100%;
+			display: none;
+		}
+		#d5{
+			width: 1366px;
+			height: 400px;
+			background-image: url(img/5.jpg);
+			-webkit-mask:url(img/mask.png) repeat-x;
+			-webkit-mask-position:54% 100%;
+			background-size: 100% 100%;
+			display: none;
+		}
+		.bottom{
+			width:1366px;
+			height: 65px;
+			background:#ccc;
+			}
+		.bottom ul li{
+			float: left;
+			list-style: none;
+			margin-left: 14px;
+		}
+		.bottom ul li:nth-child(1){
+			margin-left: 400px;
+		}
+		.bottom ul li:hover{
+			border: 2px solid #f90;
+		}
+	</style>
+</head>
+<body>	
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<div id="d4"></div>
+<div id="d5"></div>
+<div class="bottom">
+	<ul>
+		<li onclick="show('d1')"><img src="img/smail_1.gif" /></li>
+		<li onclick="show('d2')"><img src="img/smail_2.gif" /></li>
+		<li onclick="show('d3')"><img src="img/smail_3.gif" /></li>
+		<li onclick="show('d4')"><img src="img/smail_4.gif" /></li>
+		<li onclick="show('d5')"><img src="img/smail_5.gif" /></li>
+	</ul>
+</div>
+<script type="text/javascript">
+	function show(i){
+			for(var n=1;n<=5;n++){
+				if(("d"+n)==i){
+					document.getElementById(i).style.display='block';
+				}else{
+					document.getElementById("d"+n).style.display='none';
+				}
+			}
+		}
+</script>
+</body>
+</html>
