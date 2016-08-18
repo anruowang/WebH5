@@ -42,11 +42,44 @@
 		}
 		.tree{
 			position: relative;
-			
+			top:-78px;
+			left: 65px;
+			border-radius:10px 10px 0 0;
+			height: 200px;
+			width: 10px;
+			background-color: #999;
+			background:-webkit-gradient(linear,left top,from(#ffcc00),to(#cc0033));
+			z-index: -1;
+		}
+		.tree img{
+			width: 10px;
 		}
 	</style>
 </head>
 <body>
-	
+	<!-- 风车扇叶 -->
+	<div class="pinwheel">
+		<span class="one"></span>
+		<span class="tow"></span>
+		<span class="three"></span>
+	</div>
+	<!-- 风车叶 -->
+	<div class="tree"></div>
+	<script type="text/javascript">
+		var box=document.getElementsByClassName("pinwheel")[0];
+		var i=1;
+		box.onclick=function(){
+			this.style.WebkitTransform="rotate(360deg)";
+		}
+
+		addEnd(box,function(){
+		i++;
+		this.style.WebkitTransform="rotate("+360*i+"deg)";
+	});
+	function addEnd(obj,fn){
+			obj.addEventListener("webkitTransitionEnd", fn,false); //兼容谷歌
+			obj.addEventListener("transitionEnd", fn,false);//火狐
+		}
+	</script>
 </body>
 </html>

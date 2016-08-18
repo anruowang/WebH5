@@ -50,13 +50,40 @@
 		var oHome=document.getElementById("home");
 		var aImg=document.getElementById("menu_list").getElementsByTagName("img");
 
+		var rTrue=true;
+		var rDis=150; //飞出去的距离半径
+		//点击旋转
 		oHome.onclick=function(){
-			if(rture){
+			if(rTrue){
 				this.style.WebkitTransform="rotate(-360deg)";
+			//给每一个图片添加飞行的路径
+			for(var i=0;i<aImg.length;i++){//过渡完成的时间  延迟
+				aImg[i].style.WebkitTransition="0.5s "+(aImg.length-i-1)*100+"ms";
+				//开始计算距离
+				var oLT=ToLT(rDis,90/4*i);
+				aImg[i].style.left=oLT.l+"px";
+				aImg[i].style.top=oLT.t+"px";
+				aImg[i].style.WebkitTransform="rotate(-720deg)";
+				}
 			}else{
 				this.style.WebkitTransform="rotate(360deg)";
+				for(var i=0;i<aImg.length;i++){//过渡完成的时间  延迟
+				aImg[i].style.WebkitTransition="0.5s "+(aImg.length-i-1)*100+"ms";
+				//开始计算距离
+				var oLT=ToLT(rDis,90/4*i);
+				aImg[i].style.left="0px";
+				aImg[i].style.top="0px";
+				aImg[i].style.WebkitTransform="rotate(0deg)";
 			}
 		}
+		rTrue=!rTrue;
+	}
+	//已经知道斜边和角度，求直角边，用sin 和cos
+	function ToLT(rdis,iDeg){
+		var oLetf=Math.round(Math.sin(iDeg/180*Math.PI)*rdis);
+		var oTop=Math.round(Math.cos(iDeg/180*Math.PI)*rdis);
+		return {l:oLetf,t:oTop};
+	}
 	</script>
 </body>
 </html>
