@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- 指定每栏宽度而不设置元素的宽度的话，则需要在元素外面单独设置一个容器元素，然后指定该容器元素的高度，否则指定的每栏宽度被浏览器视为未设定 -->
+	<style type="text/css">
+		div#container{
+			width: 42em;
+		}
+		div#div1{
+			-moz-column-count:2;
+			-webkit-column-count:2;
+			-moz-column-width:26em;
+			-webkit-column-width:26em;
+			-webkit-column-gap:2em;
+			-moz-column-gap:2em;
+			-moz-column-rule:1px solid red;
+			-webkit-column-rule:1px solid red;
+		}
+		div#div3{
+			width: 100%;
+			background-color: yellow;
+			height: 260px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="div1">
+			<img src="test.png" alt="">
+			<p>指定每栏宽度而不设置元素的宽度的话，则需要在元素外面单独设置一个容器元素，然后指定该容器元素的高度，否则指定的每栏宽度被浏览器视为未设定</p>
+			<p>指定每栏宽度而不设置元素的宽度的话，则需要在元素外面单独设置一个容器元素，然后指定该容器元素的高度，否则指定的每栏宽度被浏览器视为未设定</p>
+		</div>
+		<div id="div3">页面其他内容</div>
+	</div>
+</body>
+</html>
