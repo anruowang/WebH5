@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*li:nth-child(2){
+			background-color: yellow;
+		}
+		li:nth-last-child(2){
+			background-color: skyblue;
+		}*/
+
+		/*使用nth-child对第奇数个、偶数个使用不同样式*/
+		li:nth-child(odd){
+			background-color: yellow;
+		}
+		li:nth-last-child(even){
+			background-color: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<h2>列表A</h2>
+	<ul>
+		<li>列表项目1</li>
+		<li>列表项目2</li>
+		<li>列表项目3</li>
+		<li>列表项目4</li>
+		<li>列表项目5</li>
+	</ul>
+</body>
+</html>

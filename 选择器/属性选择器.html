@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*[id=section1]{
+			background-color: yellow;
+		}*/
+		
+		/*[att*=val]:如果元素用att表示的属性中包含用val指定的字符，则该元素使用这个样式*/
+		/*[id*=section1]{
+			background-color: yellow; 
+		}*/
+		
+		/*[att^=val]:如果元素用att表示的属性值的开头字符用val指定的话。则该元素使用这个样式*/
+		/*[id^=section]{
+			background-color: yellow;
+		}*/
+
+		/*[att$=val]:如果元素用att表示的元素的属性值的结尾字符为用val指定的字符，则该元素使用这个样式*/
+		[id$=\-1]{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="section1" class="divYellow">示例文本1</div>
+	<div id="subsection1-1">示例文本1-1</div>
+	<div id="subsection1-2">示例文本1-2</div>
+	<div id="selection2">示例文本2</div>
+	<div id="subsection2-1">示例文本2-1</div>
+	<div id="subsection2-2">示例文本2-2</div>
+</body>
+</html>

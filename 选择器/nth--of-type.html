@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*使用nth-child对第奇数个标题背景、偶数个使用不同样式，然而所有变成了黄色，原因是nth-child选择器计算时连同父元素中所有的子元素一起计算的*/
+		/*h2:nth-child(odd){
+			background-color: yellow;其实是当div元素中的第奇数个元素如果是h2子元素时使用
+		}
+		h2:nth-child(even){
+			background-color: skyblue;
+		}*/
+
+		/*解决*/
+		h2:nth-of-type(odd){
+			background-color: yellow;
+		}
+		h2:nth-of-type(even){
+			background-color: skyblue;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<h2>文章标题A</h2>
+	<p>文章正文。</p>
+	<h2>文章标题B</h2>
+	<p>文章正文。</p>
+	<h2>文章标题C</h2>
+	<p>文章正文。</p>
+	<h2>文章标题D</h2>
+	<p>文章正文。</p>
+</div>
+</body>
+</html>

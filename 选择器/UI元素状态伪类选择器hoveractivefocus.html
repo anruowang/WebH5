@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- E:active选择器被用来指定元素被激活(鼠标在这个元素按下还没有松开)时使用的样式
+	E:focus选择器被用来指定元素获得光标焦点时使用的样式，主要在文本框控件获得焦点并进行文字输入时使用 -->
+	<style type="text/css">
+		input[type="text"]:hover{
+			background-color:greenyellow;
+		}
+		input[type="text"]:focus{
+			background-color: skyblue;
+		}
+		input[type="text"]:active{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<p>姓名：<input type="text" name="name" /></p>
+		<p>地址：<input type="text" name="address" /></p>
+	</form>
+</body>
+</html>
