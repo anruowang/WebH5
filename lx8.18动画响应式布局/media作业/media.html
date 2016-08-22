@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<style type="text/css">
-		*{
+		
+		@media screen and (min-width:1332px){
+			*{
 			padding: 0;
 			margin: 0 auto;
 		}
@@ -15,7 +17,7 @@
 		.div1{
 			width: 372px;
 			height: 800px;
-			/*background: red;*/
+		
 			float: left;
 		}
 		.img1{
@@ -25,7 +27,7 @@
 		.div2{
 			width: 940px;
 			height: 800px;
-			/*background: blue;*/
+		
 			float: left;
 			margin-left: 20px;
 		}
@@ -33,7 +35,7 @@
 			padding-top: 4px;
 			width:940px;
 			height: 60px;
-			/*background: blue;*/
+		
 			float: left;
 
 		}
@@ -70,14 +72,13 @@
 		.ul1 li a{
 			text-decoration: none;
 			font-size: 16px;
-			/*padding-left: 100px;*/
-
+		
 			color: red;
 		}
 		.box2{
 			width:940px;
 			height: 650px;
-			/*background: lime;*/
+			
 			float: left;
 			
 		}
@@ -91,14 +92,135 @@
 			width: 940px;
 			height: 30px;
 			float: left;
+		}		
+	}	
+		/*@import url("index400_800.css") screen and (min-width:400px) and (max-width:800px);*/
+		@media screen and (min-width:600px) and (max-width:700px){
+			*{
+			padding: 0;
+			margin: 0 auto;
 		}
-		/*@media screen and (min-width:1400px){
-			.box{
-				-webkit-column-count:2;
-				-webkit-column-gap:30px;列与列的距离
-				-webkit-column-rule:1px solid #000;
-			}		
-	}	*/
+		.div1,.div2,.box4{
+			float: left;
+		}
+
+		.img1{
+			margin-left: 20px;
+			margin-top: 4px;
+		}
+		.div2{
+			
+			margin-left: 20px;
+		}
+		.box1{
+			padding-top: 4px;
+			
+
+		}
+		
+		.box3 p{
+			
+			height: 56px;
+			line-height: 56px;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.ul1{
+			
+			border-top: 1px solid #333;
+		}
+		.ul1 li{
+			list-style: none;
+			height: 58px;
+			line-height: 58px;
+			
+			
+			margin-left: 20px;
+			width: 290px;
+			float: left;
+			display: block;
+			border-bottom:1px solid #ccc;
+			text-align: center;
+		}
+		.ul1 li a{
+			text-decoration: none;
+			font-size: 16px;
+		
+			color: red;
+		}
+		
+		.box2 img{
+			float: left;
+			margin-left: 10px;
+			margin-top: 20px;
+			border-bottom:1px solid #666;
+		}
+		}
+		
+		@media screen and (max-width:600px){
+			*{
+			padding: 0;
+			margin: 0 auto;
+		}
+		.div1,.box1.box4{
+			float: left;
+		}
+
+		.img1{
+			margin-left: 20px;
+			margin-top: 4px
+		}
+		.div2{
+			
+			margin-left: 20px;
+		}
+		.box1{
+			padding-top: 4px;
+			
+
+		}
+		
+		.box3 p{
+			
+			height: 56px;
+			line-height: 56px;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: center;
+		}
+		.ul1{
+			
+			border-top: 1px solid #333;
+		}
+		.ul1 li{
+			list-style: none;
+			height: 58px;
+			line-height: 58px;
+			
+			
+			margin-left: 20px;
+			width: 290px;
+			float: left;
+			display: block;
+			border-bottom:1px solid #ccc;
+			text-align: center;
+		}
+		.ul1 li a{
+			text-decoration: none;
+			font-size: 16px;
+		
+			color: red;
+		}
+		
+		.box2 img{
+			float: left;
+			margin-left: 10px;
+			margin-top: 20px;
+			border-bottom:1px solid #666;
+		}
+		
+		}	
 	</style>
 </head>
 <body>
