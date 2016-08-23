@@ -26,7 +26,8 @@
 		
 		var y=0;//指方块向下移动的次数
 		var x=4;
-		var matrix=mold();
+		
+		var matrix=mold();//移动的方块就是生成的方块
 
 		//画面板
 		render(data,gc);
@@ -42,6 +43,7 @@
 		//方块变形
 		function rotate(){
 			var arr=[];
+			//行和列互换
 			var y=matrix.length;
 			var x=matrix[0].length;
 			for(var i=0;i<x;i++){
@@ -50,9 +52,11 @@
 			//调换数据
 			for(var i=0;i<y;i++){
 				for(var j=0;j<x;j++){
-					arr[][]=matrix[][];
+					arr[j][y-1-i]=matrix[i][j];
 				}
 			}
+			//互换完毕
+			matrix=arr;
 		}
 
 		function play(){
@@ -67,10 +71,21 @@
 						create(matrix);
 						break;
 					case 39://向右移动
-						claearPre
+						clearPre(matrix);
+						x++;
+						if(x+matrix[0].length>=data[0].length){
+							x=data[0].length-matrix[0].length;
+						}
+						create(matrix);
+						break;
+					case 38://向上变形
+						clearPre(matrix);
+						rotate(matrix);
+						create(matrix);
 						break;
 					case 40:
-				}
+						break;
+				}	
 			}
 		}
 
