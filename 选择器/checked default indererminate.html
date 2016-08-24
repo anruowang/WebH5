@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- E:default用来指定当页面打开时默认处于选择时的样式
+	E:indeterminate用来指定当页面打开时,一组单选框中没有任何一个单选框被设定为选取状态的整租单选框的样式
+	只有opera支持 -->
+	<style type="text/css">
+		input[type="checkbox"]:default{
+			outline: 2px solid blue;
+		}
+
+	</style>
+</head>
+<body>
+	<form action="">
+		兴趣:<input type="checkbox">阅读</input>
+		<input type="checkbox">旅游</input>
+		<input type="checkbox">看电影</input>
+		<input type="checkbox">上网</input>
+	</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- E::selection伪类选择器用来指定元素处于选中状态的样式 -->
+	<style type="text/css">
+		p::selection{
+			background: red;
+			color: #fff;
+		}
+		p::-moz-selection{
+			background-color: red;
+			color: #fff;
+		}
+		input[type="text"]::selection{
+			background: gray;
+			color: #fff;
+		}
+		input[type="text"]::-moz-selection{
+			background: gray;
+			color: #fff;
+		}
+		td::selection{
+			background: green;
+			color: #fff;
+		}
+		td::-moz-selection{
+			background: green;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<p>这是一段测试文字</p>
+	<input type="text" value="这是一段测试文字。" />
+	<table border="1" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>测试文字</td>
+		<td>测试文字</td>
+	</tr>
+	<tr>
+		<td>测试文字</td>
+		<td>测试文字</td>
+	</tr>
+	</table>
+</body>
+</html>

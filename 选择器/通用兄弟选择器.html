@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div~p{
+			background-color: #00ff00;
+		}
+		/*指定位于同一个父元素之中的某个元素之后所有的其他种类的兄弟元素使用的样式*/
+	</style>
+</head>
+<body>
+	<div style="width:733px;border:1px solid #666;padding: 5px;">
+		<div>
+			<p>p元素为div的子元素</p>
+			<p>p元素为div的子元素</p>
+		</div>
+		<hr/>
+		<p>p标签为div的兄弟元素</p>
+		<p>p标签为div的兄弟元素</p>
+		<hr/>
+		<p>p标签为div的兄弟元素</p>
+		<hr/>
+		<div>p元素为div的子元素</div>
+		<hr/>
+		<p>p元素为div的兄弟元素</p>
+	</div>
+</body>
+</html>

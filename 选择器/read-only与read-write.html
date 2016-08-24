@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		input[type="text"]:read-only{
+			background-color: gray;
+		}
+		input[type="text"]:read-write{
+			background-color: green;
+		}
+		input[type="text"]:-moz-read-only{
+			background-color: gray;
+		}
+		input[type="text"]:-moz-read-write{
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<!-- E:read-only伪类选择器用来指定当前元素处于只读状态下的样式
+	E:read-write伪类选择器用来指定当前元素处于非只读状态下的样式 --> 
+	<form action="">
+		名前：<input type="text" name="name" />
+		地址：<input type="text" name="address" value="江苏省常州省"  readonly="readonly" />
+	</form>
+</body>
+</html>
