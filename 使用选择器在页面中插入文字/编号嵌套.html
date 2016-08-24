@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		h1:before{
+			content: counter(mycounter)'.';
+		}
+		h1{
+			counter-increment: mycounter;
+			counter-reset: subcounter;/*将第二个大标题中的中标题重新开始编号*/
+
+		}
+		h2:before{
+			content: counter(subcounter)'.';
+			/*content:counter(mycounter) '-' counter(subcounter) ;有问题*/
+		}
+		h2{
+			counter-increment: subcounter;
+			margin-left: 40px;
+		}
+	</style>
+</head>
+<body>
+	<h1>大标题</h1>
+	<h2>中标题</h2>
+	<h2>中标题</h2>
+	<h2>中标题</h2>
+	<h1>大标题</h1>
+	<h2>中标题</h2>
+	<h2>中标题</h2>
+	<h2>中标题</h2>
+</body>
+</html>

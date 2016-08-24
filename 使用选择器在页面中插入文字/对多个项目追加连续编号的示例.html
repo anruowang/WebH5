@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		h1:before{
+			/*content: '第'counter(mycounter)'章';在项目编号中添加文字*/
+			/*content: counter(mycounter)'.';/*指定编号样式*/*/
+			content:counter(mycounter,upper-alpha)'.';/*指定编号种类*/
+			color: blue;
+			font-size: 42px;
+		}
+		h1{
+			counter-increment:mycounter;
+		}
+	</style>
+</head>
+<body>
+	<h1>大标题</h1>
+	<p>示例文字。</p>
+	<h1>大标题</h1>
+	<p>示例文字。</p>
+	<h1>大标题</h1>
+	<p>示例文字。</p>
+</body>
+</html>
