@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#container{
+			display: -moz-box;
+			display: -moz-box;
+			border: 5px solid blue;
+			/*-moz-box-orient:horizontal;
+			-webkit-box-orient:horizontal;*/
+			-moz-box-orient:vertical;
+			-webkit-box-orient:vertical;
+			width: 500px;
+			height: 300px;
+		}
+		#text-a{
+			background: orange;
+		}
+		#text-b{
+			background: yellow;
+			-moz-box-flex:1;
+			-webkit-box-flex:1;/*弹性盒布局消除空白*/
+		}
+		#text-c{
+			background: limegreen;
+		}
+		#text-a,#text-b,#text-c{
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="text-a">示例文字A</div>
+		<div id="text-b">示例文字B</div>
+		<div id="text-c">示例文字C</div>
+	</div>
+</body>
+</html>
