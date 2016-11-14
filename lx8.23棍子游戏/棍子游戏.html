@@ -18,7 +18,7 @@
 			background-size: 300px 500px;*/
 			position: relative;
 			left: 0px;
-			background: yellow;
+			background: #d0d6e4;
 		}
 		#hero{
 			width: 40px;
@@ -65,10 +65,16 @@
 			width: 100px;
 			font-size: 40px;
 			margin: 0 auto;
+			text-align:center;
+		}
+		a{
+			fontt-size:16px;
+			color:#336699;
 		}
 	</style>
 </head>
 <body>
+	<a href="index.html">回到首页</a>
 	<p id="grade">0</p>
 	<div id="wrap">
 		<div id="gameContent">
@@ -140,6 +146,7 @@
 				hero.style.left=middlediv.offsetLeft+"px";
 			}else{
 				alert("游戏失败");
+				window.location.href="棍子游戏.html";
 			}
 		});
 
